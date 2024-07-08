@@ -63,11 +63,12 @@ export async function POST(req: Request) {
     const user = {
       clerkId: id,
       email: email_addresses[0].email_address,
-      username: username || 'default_username', // Provide a fallback value
-      firstName: first_name || 'Default First Name', // Provide a fallback value
-      lastName: last_name || 'Default Last Name', // Provide a fallback value
+      username: username!, // Provide a fallback value
+      firstName: first_name!, // Provide a fallback value
+      lastName: last_name!, // Provide a fallback value
       photo: image_url,
     };
+    console.log(user)
   
     const newUser = await createUser(user);
     

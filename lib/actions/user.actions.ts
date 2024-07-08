@@ -1,4 +1,4 @@
-'use server';
+"use server";
 // server action file
 
 
@@ -13,7 +13,6 @@ import { revalidatePath } from "next/cache";
 export async function createUser(user: CreateUserParams) {
     try {
       await connectToDatabase()
-  
       const newUser = await User.create(user)
       return JSON.parse(JSON.stringify(newUser))
     } catch (error) {
